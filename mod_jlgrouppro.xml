@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" method="upgrade">
+<extension type="module" version="1.7" method="upgrade">
 	<name>MOD_JLGROUPPRO</name>
 	<creationDate>2010-09-23</creationDate>
 	<author>JoomLine</author>
@@ -10,7 +10,7 @@
 	<version>1.0</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
-		<filename module="mod_JLGROUPPRO">mod_jlgrouppro.php</filename>
+		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
 		<filename>index.html</filename>
         <filename>helper.php</filename>
         <folder>tmpl</folder>
@@ -35,12 +35,16 @@
 				<option value="0">MOD_JLGROUPPRO_YES</option>
 				<option value="1">MOD_JLGROUPPRO_NO</option>
 			</field>
+
+			<field name="group_id_ok" type="text" label="MOD_JLGROUPPRO_IDOK_LABEL" description="MOD_JLGROUPPRO_IDOK_DESCRIPTION" default="50582132228315"/>
+ 
+			<field name="fbappid" type="text" label="MOD_JLGROUPPRO_FBAPPID_LABEL" description="MOD_JLGROUPPRO_FBAPPID_DESCRIPTION" default=""/>
+			<field name="group_id_fb" type="text" label="MOD_JLGROUPPRO_IDFB_LABEL" description="MOD_JLGROUPPRO_IDFB_DESCRIPTION" default="joomline"/>
+			
+ 			<field name="width" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="210"/>
+			<field name="height" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="300"/>
 			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 		</fieldset>
      </fields>
-			<field name="group_id" type="text" label="MOD_JLGROUPPRO_IDOK_LABEL" description="MOD_JLGROUPPRO_IDOK_DESCRIPTION" default="50582132228315"/>
- 
- 			<field name="width" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="200"/>
-			<field name="height" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="290"/>
 	</config>
 </extension>

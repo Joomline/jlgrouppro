@@ -41,4 +41,15 @@ VK.Widgets.Group("jlvkgrouppro<?=$group_id?>", {mode: <?=$mode?>, wide: <?=$wide
 }
 (document, "ok_grouppro_widget", <?=$group_id_ok?>, '{width: "<?=$width?>",height: "<?=$height?>"}');
 </script>
+<!-- FB Widget -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=<?=$fbappid?>";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/<?=$group_id_fb?>" data-width="<?=$width?>" data-height="<?=$height?>" data-show-faces="true" data-stream="true" data-header="true"></div>
  
