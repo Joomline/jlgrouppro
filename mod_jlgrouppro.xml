@@ -25,6 +25,7 @@
 	<config>
 		<fields name="params">
           <fieldset name="basic">
+			<field name="tp1" type="spacer" class="text" label="MOD_JLGROUPPRO_VK_SETTINGS"/>	
 			<field name="group_id" type="text" label="MOD_JLGROUPPRO_IDVK_LABEL" description="MOD_JLGROUPPRO_IDVK_DESCRIPTION" default="17291036"/>
 			<field name="mode" type="list" label="MOD_JLGROUPPRO_MODE_LABEL" default="0">
 				<option value="0">MOD_JLGROUPPRO_MODE_1</option>
@@ -35,12 +36,12 @@
 				<option value="0">MOD_JLGROUPPRO_YES</option>
 				<option value="1">MOD_JLGROUPPRO_NO</option>
 			</field>
-
+			<field name="tp2" type="spacer" class="text" label="MOD_JLGROUPPRO_OK_SETTINGS"/>	
 			<field name="group_id_ok" type="text" label="MOD_JLGROUPPRO_IDOK_LABEL" description="MOD_JLGROUPPRO_IDOK_DESCRIPTION" default="50582132228315"/>
- 
+			<field name="tp3" type="spacer" class="text" label="MOD_JLGROUPPRO_FB_SETTINGS"/>	
 			<field name="fbappid" type="text" label="MOD_JLGROUPPRO_FBAPPID_LABEL" description="MOD_JLGROUPPRO_FBAPPID_DESCRIPTION" default=""/>
 			<field name="group_id_fb" type="text" label="MOD_JLGROUPPRO_IDFB_LABEL" description="MOD_JLGROUPPRO_IDFB_DESCRIPTION" default="joomline"/>
-			
+			<field name="tp4" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS"/>
  			<field name="width" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="210"/>
 			<field name="height" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="300"/>
 			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
