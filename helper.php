@@ -16,3 +16,4 @@ $width 		= $params->get('width');
 $mode 		= $params->get('mode');
 $height 	= $params->get('height');
 $wide 		= $params->get('wide');
+$group_id_ok= $params->get('group_id_ok');
