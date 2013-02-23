@@ -16,6 +16,10 @@ $doc->addScriptDeclaration('
 	}
 	');
 
+
+?>
+<ul class="nav nav-tabs" id="jlgrouppro">
+<?
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
@@ -33,16 +37,31 @@ HTML;
 						} else {$scriptPage .='';} break;
 			}
 		}
+echo $scriptPage;
+$scriptPage	='';
 ?>
-	<div class="tab-content">
+</ul>
+
+<div class="tab-content">
+<?
+foreach ($orders as $order) {		
+	switch($order) {		
+	case 1:
+	if ($showvkontakte) { $scriptPage .= <<<HTML
+	
 	<div class="tab-pane active" id="vkgroup">
 			<!-- VK Widget -->
-			<div  id="jlvkgrouppro<?=$group_id?>"></div>
+			<div  id="jlvkgrouppro$group_id"></div>
 			<script type="text/javascript">
-			VK.Widgets.Group("jlvkgrouppro<?=$group_id?>", {mode: <?=$mode?>, wide: <?=$wide?>, width: "<?=$width?>", height: "<?=$height?>"}, <?=$group_id?>);
+			VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$width", height: "$height"}, $group_id);
 			</script>
     </div>
-    <div class="tab-pane" id="okgroup">
+HTML;
+	
+						} else {$scriptPage .='';} break;
+	case 2:	
+	if ($showok) { $scriptPage .= <<<HTML
+	<div class="tab-pane" id="okgroup">
 			<!-- OK Widget -->
 			<div id="ok_grouppro_widget"></div>
 			<script>
@@ -59,9 +78,13 @@ HTML;
 			  }
 			  d.documentElement.appendChild(js);
 			}
-			(document, "ok_grouppro_widget", <?=$group_id_ok?>, '{width: "<?=$width?>",height: "<?=$height?>"}');
+			(document, "ok_grouppro_widget", $group_id_ok, '{width: "$width",height: "$height"}');
 			</script>
     </div>
+HTML;
+						} else {$scriptPage .='';} break;
+	case 3:	
+	if ($showfacebook) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="fbgroup">
 			<!-- FB Widget -->
 			<div id="fb-root"></div>
@@ -69,12 +92,17 @@ HTML;
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
 			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=<?=$fbappid?>";
+			  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=$fbappid";
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 
-			<div class="fb-like-box" data-href="http://www.facebook.com/<?=$group_id_fb?>" data-width="<?=$width?>" data-height="<?=$height?>" data-show-faces="true" data-stream="false" data-header="true"></div>
+			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
     </div>
+HTML;
+						} else {$scriptPage .='';} break;
+}}
+echo $scriptPage;
+?>
 </div>
 <script type="text/javascript">
 jQuery(document).ready(function(){
