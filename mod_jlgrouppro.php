@@ -7,12 +7,9 @@
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
 */
+// No direct access
+defined('_JEXEC') or die('Restricted access');
 
-// no direct access
-defined('_JEXEC') or die;
+require_once( dirname(__FILE__).DS.'helper.php' );
 
-$group_id 	= $params->get('group_id');
-$width 		= $params->get('width');
-$mode 		= $params->get('mode');
-$height 	= $params->get('height');
-$wide 		= $params->get('wide');
+require JModuleHelper::getLayoutPath('mod_jlgrouppro', $params->get('layout', 'default'));
