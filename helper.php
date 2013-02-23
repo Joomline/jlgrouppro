@@ -19,3 +19,7 @@ $wide 			= $params->get('wide');
 $group_id_ok	= $params->get('group_id_ok');
 $fbappid		= $params->get('fbappid');
 $group_id_fb	= $params->get('group_id_fb');
+$showvkontakte 	= $params->get('showvkontakte');
+$showok 		= $params->get('showok');
+$showfacebook 	= $params->get('showfacebook');
+$orders 		= $params->get('orders');
