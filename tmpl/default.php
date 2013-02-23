@@ -16,12 +16,24 @@ $doc->addScriptDeclaration('
 	}
 	');
 
+foreach ($orders as $order) {
+			switch($order) {
+				case 1:	if ($showvkontakte) { 
+					$scriptPage .= <<<HTML
+						<li class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>
+HTML;
+						} else {$scriptPage .='';} break;
+				case 2:	if ($showok) { $scriptPage .= <<<HTML
+					<li><a href="#" data-target="#okgroup" data-toggle="tab">ОК</a></li>
+HTML;
+						} else {$scriptPage .='';} break;
+				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
+					 <li><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
+HTML;
+						} else {$scriptPage .='';} break;
+			}
+		}
 ?>
-<ul class="nav nav-tabs" id="jlgrouppro">
-      <li class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>
-      <li><a href="#" data-target="#okgroup" data-toggle="tab">ОК</a></li>
-	  <li><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
-</ul>
 	<div class="tab-content">
 	<div class="tab-pane active" id="vkgroup">
 			<!-- VK Widget -->

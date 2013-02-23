@@ -22,4 +22,4 @@ $group_id_fb	= $params->get('group_id_fb');
 $showvkontakte 	= $params->get('showvkontakte');
 $showok 		= $params->get('showok');
 $showfacebook 	= $params->get('showfacebook');
-$orders 		= $params->get('orders');
+$orders 		= explode(",",$params->get('orders'));
