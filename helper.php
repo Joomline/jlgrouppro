@@ -23,3 +23,4 @@ $showvkontakte 	= $params->get('showvkontakte');
 $showok 		= $params->get('showok');
 $showfacebook 	= $params->get('showfacebook');
 $orders 		= explode(",",$params->get('orders'));
+$typeviewer 	= $params->get('typeviewer');

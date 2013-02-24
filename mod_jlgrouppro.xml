@@ -58,6 +58,10 @@
  			<field name="width" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="300"/>
 			<field name="height" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="300"/>
 			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			<field name="typeviewer" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWER_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>
 		</fieldset>
      </fields>
 	</config>

@@ -15,8 +15,15 @@ $doc->addScriptDeclaration('
 		document.write(unescape(\'<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js">%3C/script%3E\'));
 	}
 	');
-
-
+If ($typeviewer==1) {
+	//if jquery
+	
+	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
+	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
+	$doc->addStyleSheet('http://yandex.st/bootstrap/2.3.0/css/bootstrap.min.css');
+	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
+}
+else {}
 ?>
 <ul class="nav nav-tabs" id="jlgrouppro">
 <?
@@ -24,15 +31,15 @@ foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
 					$scriptPage .= <<<HTML
-						<li class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>
+						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
-					<li><a href="#" data-target="#okgroup" data-toggle="tab">ОК</a></li>
+					<li style="list-style-type: none;"><a href="#" data-target="#okgroup" data-toggle="tab">ОК</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
-					 <li><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
+					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}
@@ -109,12 +116,3 @@ jQuery(document).ready(function(){
 jQuery('#jlgrouppro a:first).tab('show');
 }
 </script>
-
-
-
-
-
-
-
-
- 
