@@ -104,6 +104,10 @@ HTML;
 			}(document, 'script', 'facebook-jssdk'));</script>
 
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
+			<div style="text-align: right;">
+				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.ru">Социальные расширения Joomla</a>
+			</div>	
+			
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
