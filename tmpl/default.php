@@ -15,14 +15,17 @@ $doc->addScriptDeclaration('
 		document.write(unescape(\'<script type="text/javascript" src="http://vkontakte.ru/js/api/openapi.js">%3C/script%3E\'));
 	}
 	');
-If ($typeviewer==1) {
-	//if jquery
-	
+If ($typeviewerjq==1) {
+
 	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
+	}
+If ($typeviewerbs==1) {
 	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
 	$doc->addStyleSheet('http://yandex.st/bootstrap/2.3.0/css/bootstrap.min.css');
+	}
+If ($typeviewernojq==1) {
 	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
-}
+	}
 else {}
 ?>
 <ul class="nav nav-tabs" id="jlgrouppro">
