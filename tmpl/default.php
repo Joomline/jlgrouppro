@@ -34,7 +34,9 @@ foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
 					$scriptPage .= <<<HTML
-						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>
+						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>		
+	
+					
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
@@ -53,6 +55,7 @@ $scriptPage	='';
 </ul>
 
 <div class="tab-content">
+
 <?
 foreach ($orders as $order) {		
 	switch($order) {		
@@ -60,11 +63,10 @@ foreach ($orders as $order) {
 	if ($showvkontakte) { $scriptPage .= <<<HTML
 	
 	<div class="tab-pane active" id="vkgroup">
-			<!-- VK Widget -->
-			<div  id="jlvkgrouppro$group_id"></div>
-			<script type="text/javascript">
-			VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$width", height: "$height"}, $group_id);
-			</script>
+	<div  id="jlvkgrouppro$group_id"></div>
+	<script type="text/javascript">
+		VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$width", height: "$height"}, $group_id);
+	</script>
     </div>
 HTML;
 	
@@ -117,9 +119,11 @@ HTML;
 }}
 echo $scriptPage;
 ?>
-</div>
+</div>	
+
+
 <script type="text/javascript">
 jQuery(document).ready(function(){
-jQuery('#jlgrouppro a:first).tab('show');
-}
+jQuery('#jlgrouppro a:first').tab('show');
+});
 </script>
