@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.0
+ * @version 1.1
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -17,7 +17,7 @@ $doc->addScriptDeclaration('
 	');
 If ($typeviewerjq==1) {
 
-	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
+	$doc->addStyleSheet("modules/mod_jlgrouppro/css/jlgroupetabs.css");
 	}
 If ($typeviewerbs==1) {
 	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
@@ -34,6 +34,9 @@ foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
 					$scriptPage .= <<<HTML
+					<style>
+					#vkgroup div, #vkgroup iframe { height: {$height}px!important; }
+						</style>
 						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>		
 	
 					

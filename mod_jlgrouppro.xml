@@ -7,13 +7,14 @@
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2013 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>1.0</version>
+	<version>1.1</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
 		<filename>index.html</filename>
         <filename>helper.php</filename>
         <folder>tmpl</folder>
+		<folder>css</folder>
 	</files>
     <languages folder="language">
         <language tag="ru-RU">ru-RU/ru-RU.mod_jlgrouppro.ini</language>
