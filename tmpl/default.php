@@ -30,6 +30,7 @@ else {}
 ?>
 <ul class="nav nav-tabs" id="jlgrouppro">
 <?
+$scriptPage='';
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
