@@ -26,3 +26,4 @@ $orders 		= explode(",",$params->get('orders'));
 $typeviewerjq 	= $params->get('typeviewerjq');
 $typeviewerbs 	= $params->get('typeviewerbs');
 $typeviewernojq = $params->get('typeviewernojq');
+$scriptPage='';
