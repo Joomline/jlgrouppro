@@ -27,3 +27,6 @@ $typeviewerjq 	= $params->get('typeviewerjq');
 $typeviewerbs 	= $params->get('typeviewerbs');
 $typeviewernojq = $params->get('typeviewernojq');
 $scriptPage='';
+$fblang 		= $params->get('fblang');
+$googleid		= $params->get('googleid');
+$googlelang		= $params->get('googlelang');

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.7" method="upgrade">
+<extension type="module" version="2.5" method="upgrade">
 	<name>MOD_JLGROUPPRO</name>
-	<creationDate>2010-09-23</creationDate>
+	<creationDate>2013-05-05</creationDate>
 	<author>JoomLine</author>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2013 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>1.1</version>
+	<version>1.2</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
@@ -54,8 +54,18 @@
 			</field>			
 			<field name="fbappid" type="text" label="MOD_JLGROUPPRO_FBAPPID_LABEL" description="MOD_JLGROUPPRO_FBAPPID_DESCRIPTION" default=""/>
 			<field name="group_id_fb" type="text" label="MOD_JLGROUPPRO_IDFB_LABEL" description="MOD_JLGROUPPRO_IDFB_DESCRIPTION" default="joomline"/>
-			<field name="tp4" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS"/>
-			<field name="orders" type="text" label="MOD_JLGROUPPRO_ORDERS_LABEL" default="1,2,3" description="MOD_JLGROUPPRO_ORDERS_DESC"/>
+			<field name="fblang" type="radio" default="ru_RU" label="MOD_JLGROUPPRO_FBLANG_LABEL" >
+				 <option value="ru_RU">Русский</option>
+				 <option value="en_EN">English</option>
+			</field>
+			<field name="tp4" type="spacer" class="text" label="MOD_JLGROUPPRO_GOOGLE_SETTINGS"/>
+			<field name="googleid" type="text" label="MOD_JLGROUPPRO_GOOGLE_LABEL" description="MOD_JLGROUPPRO_GOOGLE_DESCRIPTION" default="113837355987775206344"/>
+			<field name="googlelang" type="radio" default="ru" label="MOD_JLGROUPPRO_GOOGLELANG_LABEL" >
+				 <option value="ru">Русский</option>
+				 <option value="en">English</option>
+			</field>
+			<field name="tp5" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS"/>
+			<field name="orders" type="text" label="MOD_JLGROUPPRO_ORDERS_LABEL" default="1,2,3,4" description="MOD_JLGROUPPRO_ORDERS_DESC"/>
  			<field name="width" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="300"/>
 			<field name="height" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="300"/>
 			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />

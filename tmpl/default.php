@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.1
+ * @version 1.2
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -48,6 +48,10 @@ HTML;
 						} else {$scriptPage .='';} break;
 				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
+HTML;
+						} else {$scriptPage .='';} break;
+				case 4:	if ($showfacebook) { $scriptPage .= <<<HTML
+					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup" data-toggle="tab">G+</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}
@@ -107,15 +111,33 @@ HTML;
 			  var js, fjs = d.getElementsByTagName(s)[0];
 			  if (d.getElementById(id)) return;
 			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=$fbappid";
+			  js.src = "//connect.facebook.net/$fblang/all.js#xfbml=1&appId=$fbappid";
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
 			<div style="text-align: right;">
-				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.ru">Социальные расширения Joomla</a>
+				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.ru/rasshirenija/moduli.html">Модули Joomla</a>
 			</div>	
 			
+    </div>
+HTML;
+						} else {$scriptPage .='';} break;
+		case 4:	
+	if ($showfacebook) { $scriptPage .= <<<HTML
+	<div class="tab-pane" id="ggroup">
+		<div class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+
+		<script type="text/javascript">
+		  window.___gcfg = {lang: '$googlelang'};
+
+		  (function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+		
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
