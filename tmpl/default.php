@@ -52,6 +52,12 @@ HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { $scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup" data-toggle="tab">G+</a></li>
+					 
+HTML;
+					} else {$scriptPage .='';} break;
+					
+				case 5:	if ($showtwitter) { $scriptPage .= <<<HTML
+					 <li style="list-style-type: none;"><a href="#" data-target="#twittergroup" data-toggle="tab">Twitter</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}
@@ -140,6 +146,17 @@ HTML;
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		  })();
 		</script>
+		
+    </div>
+HTML;
+						} else {$scriptPage .='';} break;
+case 5:	
+	if ($showtwitter) { $scriptPage .= <<<HTML
+	<div class="tab-pane" id="twittergroup">
+
+		<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
+
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		
     </div>
 HTML;

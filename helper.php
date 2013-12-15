@@ -32,3 +32,6 @@ $googleid		= $params->get('googleid');
 $googlelang		= $params->get('googlelang');
 $typeviewercss	= $params->get('typeviewercss');
 $showgoogle 	= $params->get('showgoogle');
+$showtwitter 	= $params->get('showtwitter');
+$twitterid 		= $params->get('twitterid');
+$twittersize 	= $params->get('twittersize');
