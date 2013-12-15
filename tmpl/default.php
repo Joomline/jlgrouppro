@@ -26,6 +26,9 @@ If ($typeviewerbs==1) {
 If ($typeviewernojq==1) {
 	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
 	}
+if ($link==0){
+	$linknone = 'display:none;';
+	}
 else {}
 ?>
 <div class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">

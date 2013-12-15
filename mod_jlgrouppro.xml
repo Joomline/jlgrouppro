@@ -103,7 +103,7 @@
 				 <option value="1">MOD_JLGROUPPRO_YES</option>
 			</field>
 			<field name="twitterid" type="text" label="MOD_JLGROUPPRO_TWITTER_LABEL" description="MOD_JLGROUPPRO_TWITTER_DESCRIPTION" default="joomline"/>
-			<field name="twittersize" type="radio" default="1" label="MOD_JLGROUPPRO_TWITTERSIZE_LABEL" >
+			<field name="twittersize" type="radio" default="medium" label="MOD_JLGROUPPRO_TWITTERSIZE_LABEL" >
 				 <option value="medium">MOD_JLGROUPPRO_MEDIUM</option>
 				 <option value="large">MOD_JLGROUPPRO_LARGE</option>
 			</field>
