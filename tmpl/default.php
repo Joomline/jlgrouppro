@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.2.1
+ * @version 1.2
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -11,11 +11,8 @@
 
 $doc = JFactory::getDocument();
 $doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
-If ($typeviewercss==1) {
-	$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
-	}
 If ($typeviewerjq==1) {
-	$doc->addCustomTag('<script src="http://yandex.st/1.9.1/jquery.min.js"></script>');
+	$doc->addStyleSheet("modules/mod_jlgrouppro/css/jlgroupetabs.css");
 	}
 If ($typeviewerbs==1) {
 	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
@@ -47,7 +44,7 @@ HTML;
 					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
-				case 4:	if ($showfacebook) { $scriptPage .= <<<HTML
+				case 4:	if ($showgoogle) { $scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup" data-toggle="tab">G+</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
@@ -114,15 +111,18 @@ HTML;
 
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
 			<div style="text-align: right;">
-				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.ru/rasshirenija/moduli.html">Модули Joomla</a>
+				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.org/">Extension Joomla</a>
 			</div>	
 			
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
 		case 4:	
-	if ($showfacebook) { $scriptPage .= <<<HTML
+	if ($showgoogle) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="ggroup">
+		<style>
+						div#___plus_0 * {min-height:300px !important;}
+		</style>
 		<div class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
 
 		<script type="text/javascript">

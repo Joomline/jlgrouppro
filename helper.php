@@ -30,4 +30,4 @@ $scriptPage='';
 $fblang 		= $params->get('fblang');
 $googleid		= $params->get('googleid');
 $googlelang		= $params->get('googlelang');
-$typeviewercss	= $params->get('typeviewercss');
+$showgoogle 	= $params->get('showgoogle');
