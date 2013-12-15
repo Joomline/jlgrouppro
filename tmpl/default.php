@@ -11,9 +11,15 @@
 
 $doc = JFactory::getDocument();
 $doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
-If ($typeviewerjq==1) {
-	$doc->addStyleSheet("modules/mod_jlgrouppro/css/jlgroupetabs.css");
+
+If ($typeviewercss==1) {
+	$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
 	}
+
+If ($typeviewerjq==1) {
+	$doc->addCustomTag('<script src="http://yandex.st/1.9.1/jquery.min.js"></script>');
+	}
+
 If ($typeviewerbs==1) {
 	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
 	}
