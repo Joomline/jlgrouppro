@@ -35,3 +35,4 @@ $showgoogle 	= $params->get('showgoogle');
 $showtwitter 	= $params->get('showtwitter');
 $twitterid 		= $params->get('twitterid');
 $twittersize 	= $params->get('twittersize');
+$link 			= $params->get('link');

@@ -25,56 +25,7 @@
 
 	<config>
 		<fields name="params">
-          <fieldset name="basic">
-			<field name="tp1" type="spacer" class="text" label="MOD_JLGROUPPRO_VK_SETTINGS"/>
-			<field name="showvkontakte" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWVKONTAKTE_LABEL" description="MOD_JLGROUPPRO_SHOWVKONTAKTE_DESC">
-				  <option value="0">MOD_JLGROUPPRO_NO</option>
-				  <option value="1">MOD_JLGROUPPRO_YES</option>
-				</field>		
-			<field name="group_id" type="text" label="MOD_JLGROUPPRO_IDVK_LABEL" description="MOD_JLGROUPPRO_IDVK_DESCRIPTION" default="17291036"/>
-			<field name="mode" type="list" label="MOD_JLGROUPPRO_MODE_LABEL" default="0">
-				<option value="0">MOD_JLGROUPPRO_MODE_1</option>
-				<option value="1">MOD_JLGROUPPRO_MODE_2</option>
-				<option value="2">MOD_JLGROUPPRO_MODE_3</option>
-			</field>
-			<field name="wide" type="radio" label="MOD_JLGROUPPRO_WIDE_LABEL" description="MOD_JLGROUPPRO_WIDE_DESCRIPTION" default="0">
-				<option value="0">MOD_JLGROUPPRO_YES</option>
-				<option value="1">MOD_JLGROUPPRO_NO</option>
-			</field>
-			<field name="tp2" type="spacer" class="text" label="MOD_JLGROUPPRO_OK_SETTINGS"/>
-			<field name="showok" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWOK_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>				
-			<field name="group_id_ok" type="text" label="MOD_JLGROUPPRO_IDOK_LABEL" description="MOD_JLGROUPPRO_IDOK_DESCRIPTION" default="50582132228315"/>
-			<field name="tp3" type="spacer" class="text" label="MOD_JLGROUPPRO_FB_SETTINGS"/>
-			<field name="showfacebook" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWFB_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>			
-			<field name="fbappid" type="text" label="MOD_JLGROUPPRO_FBAPPID_LABEL" description="MOD_JLGROUPPRO_FBAPPID_DESCRIPTION" default=""/>
-			<field name="group_id_fb" type="text" label="MOD_JLGROUPPRO_IDFB_LABEL" description="MOD_JLGROUPPRO_IDFB_DESCRIPTION" default="joomline"/>
-			<field name="fblang" type="radio" default="ru_RU" label="MOD_JLGROUPPRO_FBLANG_LABEL" >
-				 <option value="ru_RU">Русский</option>
-				 <option value="en_EN">English</option>
-			</field>
-			<field name="tp4" type="spacer" class="text" label="MOD_JLGROUPPRO_GOOGLE_SETTINGS"/>
-			<field name="showgoogle" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWGOOGLE_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>
-			<field name="googleid" type="text" label="MOD_JLGROUPPRO_GOOGLE_LABEL" description="MOD_JLGROUPPRO_GOOGLE_DESCRIPTION" default="113837355987775206344"/>
-			<field name="tp6" type="spacer" class="text" label="MOD_JLGROUPPRO_TWITTER_SETTINGS"/>
-			<field name="showtwitter" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWTWITTER_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>
-			<field name="twitterid" type="text" label="MOD_JLGROUPPRO_TWITTER_LABEL" description="MOD_JLGROUPPRO_TWITTER_DESCRIPTION" default="joomline"/>
-			<field name="twittersize" type="radio" default="1" label="MOD_JLGROUPPRO_TWITTERSIZE_LABEL" >
-				 <option value="medium">MOD_JLGROUPPRO_MEDIUM</option>
-				 <option value="large">MOD_JLGROUPPRO_LARGE</option>
-			</field>
-			<field name="tp5" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS"/>
+        <fieldset name="tp5" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS">
 			<field name="orders" type="text" label="MOD_JLGROUPPRO_ORDERS_LABEL" default="1,2,3,4,5" description="MOD_JLGROUPPRO_ORDERS_DESC"/>
 			<field name="googlelang" type="radio" default="ru" label="MOD_JLGROUPPRO_GOOGLELANG_LABEL" >
 				 <option value="ru">Русский</option>
@@ -97,9 +48,67 @@
 			</field>
 			<field name="typeviewercss" type="radio" default="1" label="PLG_JLGROUPPRO_TYPEVIEWERCSS_LABEL" >
 				<option value="0">MOD_JLGROUPPRO_NO</option>
-				<option value="1">MOD_JLGROUPPRO_YES</option>
+				<option value="1">MOD_JLGROUPPRO_YES</option>		
+			</field>
+			<field name="link" type="radio" label="MOD_JLGROUPPRO_LINK_LABEL" description="MOD_JLGROUPPRO_LINK_DESCRIPTION" default="1">
+				<option value="1">MOD_JLGROUPPRO_NO</option>
+				<option value="0">MOD_JLGROUPPRO_YES</option>
 			</field>
 		</fieldset>
+		<fieldset name="tp1" type="spacer" class="text" label="MOD_JLGROUPPRO_VK_SETTINGS">
+			<field name="showvkontakte" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWVKONTAKTE_LABEL" description="MOD_JLGROUPPRO_SHOWVKONTAKTE_DESC">
+				  <option value="0">MOD_JLGROUPPRO_NO</option>
+				  <option value="1">MOD_JLGROUPPRO_YES</option>
+				</field>		
+			<field name="group_id" type="text" label="MOD_JLGROUPPRO_IDVK_LABEL" description="MOD_JLGROUPPRO_IDVK_DESCRIPTION" default="17291036"/>
+			<field name="mode" type="list" label="MOD_JLGROUPPRO_MODE_LABEL" default="0">
+				<option value="0">MOD_JLGROUPPRO_MODE_1</option>
+				<option value="1">MOD_JLGROUPPRO_MODE_2</option>
+				<option value="2">MOD_JLGROUPPRO_MODE_3</option>
+			</field>
+			<field name="wide" type="radio" label="MOD_JLGROUPPRO_WIDE_LABEL" description="MOD_JLGROUPPRO_WIDE_DESCRIPTION" default="0">
+				<option value="0">MOD_JLGROUPPRO_YES</option>
+				<option value="1">MOD_JLGROUPPRO_NO</option>
+			</field>
+		</fieldset>
+		<fieldset name="tp2" type="spacer" class="text" label="MOD_JLGROUPPRO_OK_SETTINGS">
+			<field name="showok" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWOK_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>			
+			<field name="group_id_ok" type="text" label="MOD_JLGROUPPRO_IDOK_LABEL" description="MOD_JLGROUPPRO_IDOK_DESCRIPTION" default="50582132228315"/>
+		</fieldset>
+		<fieldset name="tp3" type="spacer" class="text" label="MOD_JLGROUPPRO_FB_SETTINGS">
+			<field name="showfacebook" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWFB_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>			
+			<field name="fbappid" type="text" label="MOD_JLGROUPPRO_FBAPPID_LABEL" description="MOD_JLGROUPPRO_FBAPPID_DESCRIPTION" default=""/>
+			<field name="group_id_fb" type="text" label="MOD_JLGROUPPRO_IDFB_LABEL" description="MOD_JLGROUPPRO_IDFB_DESCRIPTION" default="joomline"/>
+			<field name="fblang" type="radio" default="ru_RU" label="MOD_JLGROUPPRO_FBLANG_LABEL" >
+				 <option value="ru_RU">Русский</option>
+				 <option value="en_EN">English</option>
+			</field>
+		</fieldset>
+		<fieldset name="tp4" type="spacer" class="text" label="MOD_JLGROUPPRO_GOOGLE_SETTINGS">
+			<field name="showgoogle" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWGOOGLE_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>
+			<field name="googleid" type="text" label="MOD_JLGROUPPRO_GOOGLE_LABEL" description="MOD_JLGROUPPRO_GOOGLE_DESCRIPTION" default="113837355987775206344"/>
+		</fieldset>
+		<fieldset name="tp6" type="spacer" class="text" label="MOD_JLGROUPPRO_TWITTER_SETTINGS">
+			<field name="showtwitter" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWTWITTER_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>
+			<field name="twitterid" type="text" label="MOD_JLGROUPPRO_TWITTER_LABEL" description="MOD_JLGROUPPRO_TWITTER_DESCRIPTION" default="joomline"/>
+			<field name="twittersize" type="radio" default="1" label="MOD_JLGROUPPRO_TWITTERSIZE_LABEL" >
+				 <option value="medium">MOD_JLGROUPPRO_MEDIUM</option>
+				 <option value="large">MOD_JLGROUPPRO_LARGE</option>
+			</field>
+		</fieldset>
+		
      </fields>
 	</config>
 </extension>
