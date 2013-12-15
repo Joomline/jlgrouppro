@@ -133,7 +133,7 @@ HTML;
 	if ($showgoogle) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="ggroup">
 		<style>
-						div#___plus_0 * {min-height:300px !important;}
+						div#___plus_0 * {min-height:{$height}px !important;}
 		</style>
 		<div class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
 
