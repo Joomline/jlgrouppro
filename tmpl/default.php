@@ -28,6 +28,7 @@ If ($typeviewernojq==1) {
 	}
 else {}
 ?>
+<div class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
 <ul class="nav nav-tabs" id="jlgrouppro">
 <?
 foreach ($orders as $order) {
@@ -122,10 +123,6 @@ HTML;
 			}(document, 'script', 'facebook-jssdk'));</script>
 
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
-			<div style="text-align: right;">
-				<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.org/">Extension Joomla</a>
-			</div>	
-			
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
@@ -165,7 +162,10 @@ HTML;
 echo $scriptPage;
 ?>
 </div>	
-
+	<div style="text-align: right; <?php echo $linknone;?>">
+		<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.org/">Extension Joomla</a>
+	</div>	
+</div>
 
 <script type="text/javascript">
 jQuery(document).ready(function(){

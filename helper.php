@@ -36,3 +36,4 @@ $showtwitter 	= $params->get('showtwitter');
 $twitterid 		= $params->get('twitterid');
 $twittersize 	= $params->get('twittersize');
 $link 			= $params->get('link');
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
