@@ -17,7 +17,7 @@ If ($typeviewercss==1) {
 	}
 
 If ($typeviewerjq==1) {
-	$doc->addCustomTag('<script src="http://yandex.st/1.9.1/jquery.min.js"></script>');
+	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
 	}
 
 If ($typeviewerbs==1) {
@@ -32,7 +32,7 @@ if ($link==0){
 else {}
 ?>
 <div class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
-<ul class="nav nav-tabs" id="jlgrouppro">
+<br clear="all"><div id="jlcomments_container"><ul class="nav nav-tabs" id="jlgrouppro">
 <?
 foreach ($orders as $order) {
 			switch($order) {
@@ -168,6 +168,7 @@ echo $scriptPage;
 	<div style="text-align: right; <?php echo $linknone;?>">
 		<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.org/">Extension Joomla</a>
 	</div>	
+</div>
 </div>
 
 <script type="text/javascript">
