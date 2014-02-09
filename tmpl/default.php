@@ -33,7 +33,7 @@ else {}
 ?>
 <div class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
 <br clear="all"><div id="jlcomments_container"><ul class="nav nav-tabs" id="jlgrouppro">
-<?
+<?php
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
@@ -73,7 +73,7 @@ $scriptPage	='';
 
 <div class="tab-content">
 
-<?
+<?php
 foreach ($orders as $order) {		
 	switch($order) {		
 	case 1:
