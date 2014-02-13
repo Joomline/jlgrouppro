@@ -10,7 +10,7 @@
 // No direct access
 
 $doc = JFactory::getDocument();
-$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
+
 
 If ($typeviewercss==1) {
 	$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
@@ -37,6 +37,7 @@ else {}
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
+					$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
 					$scriptPage .= <<<HTML
 					<style>
 					#vkgroup div, #vkgroup$module->id iframe { height: {$height}px!important; }
@@ -54,12 +55,9 @@ HTML;
 					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup$module->id" data-toggle="tab">FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
-				case 4:	if ($showgoogle) { $scriptPage .= <<<HTML
+				case 4:	if ($showgoogle) { 
+				$scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup$module->id" data-toggle="tab">G+</a></li>
-					 		<script type="text/javascript" src="https://apis.google.com/js/platform.js">
-		  {lang: '$googlelang', parsetags: 'explicit'}
-		</script>
-		<div  class="g-plus" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
 					 
 HTML;
 					} else {$scriptPage .='';} break;
@@ -82,76 +80,72 @@ foreach ($orders as $order) {
 	switch($order) {		
 	case 1:
 	if ($showvkontakte) { $scriptPage .= <<<HTML
-	
-	<div class="tab-pane active" id="vkgroup$module->id">
-	<div  id="jlvkgrouppro$group_id"></div>
-	<script type="text/javascript">
-		VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
-	</script>
-    </div>
+		<div class="tab-pane active" id="vkgroup$module->id">
+			<div  id="jlvkgrouppro$group_id"></div>
+			<script type="text/javascript">
+				VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
+			</script>
+		</div>
 HTML;
 	
 						} else {$scriptPage .='';} break;
 	case 2:	
 	if ($showok) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="okgroup$module->id">
-			<!-- OK Widget -->
-			<div id="ok_grouppro_widget$module->id"></div>
-			<script>
-			!function(d,id,did,st){
-			  var js=d.createElement('script');
-			  js.src="http://connect.ok.ru/connect.js";
-			  js.onload = js.onreadystatechange = function (){
-				if(!this.readyState || this.readyState=="loaded" || this.readyState=="complete"){
-				   if(!this.executed){
-					 this.executed = true;
-					 setTimeout(function(){OK.CONNECT.insertGroupWidget(id,did,st);},0);
-				   }
-				}
-			  }
-			  d.documentElement.appendChild(js);
-			}
-			(document, "ok_grouppro_widget$module->id", $group_id_ok, '{width: "$widthok",height: "$heightok"}');
-			</script>
-    </div>
+		<div class="tab-pane" id="okgroup$module->id">
+				<div id="ok_grouppro_widget$module->id"></div>
+				<script>
+					!function(d,id,did,st){
+					  var js=d.createElement('script');
+					  js.src="http://connect.ok.ru/connect.js";
+					  js.onload = js.onreadystatechange = function (){
+						if(!this.readyState || this.readyState=="loaded" || this.readyState=="complete"){
+						   if(!this.executed){
+							 this.executed = true;
+							 setTimeout(function(){OK.CONNECT.insertGroupWidget(id,did,st);},0);
+						   }
+						}
+					  }
+					  d.documentElement.appendChild(js);
+					}
+					(document, "ok_grouppro_widget$module->id", $group_id_ok, '{width: "$widthok",height: "$heightok"}');
+				</script>
+		</div>
 HTML;
 						} else {$scriptPage .='';} break;
 	case 3:	
 	if ($showfacebook) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="fbgroup$module->id">
-			<!-- FB Widget -->
+		<div class="tab-pane" id="fbgroup$module->id">
 			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/$fblang/all.js#xfbml=1&appId=$fbappid";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
-
+				<script>(function(d, s, id) {
+					  var js, fjs = d.getElementsByTagName(s)[0];
+					  if (d.getElementById(id)) return;
+					  js = d.createElement(s); js.id = id;
+					  js.src = "//connect.facebook.net/$fblang/all.js#xfbml=1&appId=$fbappid";
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+				</script>
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="true" data-stream="false" data-header="true"></div>
-    </div>
+		</div>
 HTML;
 						} else {$scriptPage .='';} break;
 		case 4:	
 	if ($showgoogle) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="ggroup$module->id">
-
-
-		<script type="text/javascript">gapi.page.go();</script>
-	
-		
-    </div>
+		<div class="tab-pane" id="ggroup$module->id">
+			<style>
+				div[id*=plus_] * {min-height:{$heightgp}px !important;}
+			</style>
+			<script type="text/javascript" src="https://apis.google.com/js/platform.js">
+				{lang: '$googlelang', parsetags: 'explicit'}
+			</script>
+			<div  class="g-plus" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+		</div>
 HTML;
 						} else {$scriptPage .='';} break;
 case 5:	
 	if ($showtwitter) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="twittergroup$module->id">
-
 		<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
-
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
