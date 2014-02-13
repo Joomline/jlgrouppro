@@ -129,7 +129,9 @@ HTML;
 HTML;
 						} else {$scriptPage .='';} break;
 		case 4:	
-	if ($showgoogle) { $scriptPage .= <<<HTML
+	if ($showgoogle) { 
+	$doc->addCustomTag('<link href="https://plus.google.com/'.$googleid.'" rel="publisher" />');
+	$scriptPage .= <<<HTML
 		<div class="tab-pane" id="ggroup$module->id">
 			<style>
 				div[id*=plus_] * {min-height:{$heightgp}px !important;}
