@@ -10,7 +10,7 @@
 
 // no direct access
 defined('_JEXEC') or die;
-
+/*
 $group_id 		= $params->get('group_id');
 $width 			= $params->get('width');
 $mode 			= $params->get('mode');
@@ -36,4 +36,4 @@ $showtwitter 	= $params->get('showtwitter');
 $twitterid 		= $params->get('twitterid');
 $twittersize 	= $params->get('twittersize');
 $link 			= $params->get('link');
-$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));*/

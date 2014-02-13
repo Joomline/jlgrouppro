@@ -10,6 +10,33 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
+$group_id 		= $params->get('group_id');
+$width 			= $params->get('width');
+$mode 			= $params->get('mode');
+$height 		= $params->get('height');
+$wide 			= $params->get('wide');
+$group_id_ok	= $params->get('group_id_ok');
+$fbappid		= $params->get('fbappid');
+$group_id_fb	= $params->get('group_id_fb');
+$showvkontakte 	= $params->get('showvkontakte');
+$showok 		= $params->get('showok');
+$showfacebook 	= $params->get('showfacebook');
+$orders 		= explode(",",$params->get('orders'));
+$typeviewerjq 	= $params->get('typeviewerjq');
+$typeviewerbs 	= $params->get('typeviewerbs');
+$typeviewernojq = $params->get('typeviewernojq');
+$scriptPage='';
+$fblang 		= $params->get('fblang');
+$googleid		= $params->get('googleid');
+$googlelang		= $params->get('googlelang');
+$typeviewercss	= $params->get('typeviewercss');
+$showgoogle 	= $params->get('showgoogle');
+$showtwitter 	= $params->get('showtwitter');
+$twitterid 		= $params->get('twitterid');
+$twittersize 	= $params->get('twittersize');
+$link 			= $params->get('link');
+$moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+
 require_once dirname(__FILE__).'/helper.php';
 
 require JModuleHelper::getLayoutPath('mod_jlgrouppro', $params->get('layout', 'default'));

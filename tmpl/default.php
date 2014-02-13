@@ -31,37 +31,37 @@ if ($link==0){
 	}
 else {}
 ?>
-<div class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
-<br clear="all"><div id="jlcomments_container"><ul class="nav nav-tabs" id="jlgrouppro">
+<div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
+<br clear="all"><div id="jlcomments_container<?php echo $module->id; ?>"><ul class="nav nav-tabs" id="jlgrouppro<?php echo $module->id; ?>">
 <?php
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
 					$scriptPage .= <<<HTML
 					<style>
-					#vkgroup div, #vkgroup iframe { height: {$height}px!important; }
+					#vkgroup div, #vkgroup$module->id iframe { height: {$height}px!important; }
 						</style>
-						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup" href="#" data-toggle="tab">VK</a></li>		
+						<li style="list-style-type: none;" class="active"><a data-target="#vkgroup$module->id" href="#" data-toggle="tab">VK</a></li>		
 	
 					
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
-					<li style="list-style-type: none;"><a href="#" data-target="#okgroup" data-toggle="tab">ОК</a></li>
+					<li style="list-style-type: none;"><a href="#" data-target="#okgroup$module->id" data-toggle="tab">ОК</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup" data-toggle="tab">FB</a></li>
+					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup$module->id" data-toggle="tab">FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup" data-toggle="tab">G+</a></li>
+					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup$module->id" data-toggle="tab">G+</a></li>
 					 
 HTML;
 					} else {$scriptPage .='';} break;
 					
 				case 5:	if ($showtwitter) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#twittergroup" data-toggle="tab">Twitter</a></li>
+					 <li style="list-style-type: none;"><a href="#" data-target="#twittergroup$module->id" data-toggle="tab">Twitter</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}
@@ -79,7 +79,7 @@ foreach ($orders as $order) {
 	case 1:
 	if ($showvkontakte) { $scriptPage .= <<<HTML
 	
-	<div class="tab-pane active" id="vkgroup">
+	<div class="tab-pane active" id="vkgroup$module->id">
 	<div  id="jlvkgrouppro$group_id"></div>
 	<script type="text/javascript">
 		VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$width", height: "$height"}, $group_id);
@@ -90,9 +90,9 @@ HTML;
 						} else {$scriptPage .='';} break;
 	case 2:	
 	if ($showok) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="okgroup">
+	<div class="tab-pane" id="okgroup$module->id">
 			<!-- OK Widget -->
-			<div id="ok_grouppro_widget"></div>
+			<div id="ok_grouppro_widget$module->id"></div>
 			<script>
 			!function(d,id,did,st){
 			  var js=d.createElement('script');
@@ -107,14 +107,14 @@ HTML;
 			  }
 			  d.documentElement.appendChild(js);
 			}
-			(document, "ok_grouppro_widget", $group_id_ok, '{width: "$width",height: "$height"}');
+			(document, "ok_grouppro_widget$module->id", $group_id_ok, '{width: "$width",height: "$height"}');
 			</script>
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
 	case 3:	
 	if ($showfacebook) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="fbgroup">
+	<div class="tab-pane" id="fbgroup$module->id">
 			<!-- FB Widget -->
 			<div id="fb-root"></div>
 			<script>(function(d, s, id) {
@@ -131,28 +131,23 @@ HTML;
 						} else {$scriptPage .='';} break;
 		case 4:	
 	if ($showgoogle) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="ggroup">
+	<div class="tab-pane" id="ggroup$module->id">
 		<style>
-						div#___plus_0 * {min-height:{$height}px !important;}
+	
+						div[id*=plus_] * {min-height:{$height}px !important;}
 		</style>
-		<div class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
-
-		<script type="text/javascript">
-		  window.___gcfg = {lang: '$googlelang'};
-
-		  (function() {
-			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-			po.src = 'https://apis.google.com/js/plusone.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		  })();
+		<script type="text/javascript" src="https://apis.google.com/js/platform.js">
+		  {lang: '$googlelang', parsetags: 'explicit'}
 		</script>
+		<div  class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+	
 		
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
 case 5:	
 	if ($showtwitter) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="twittergroup">
+	<div class="tab-pane" id="twittergroup$module->id">
 
 		<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
 
