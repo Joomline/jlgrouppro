@@ -11,10 +11,16 @@
 defined('_JEXEC') or die('Restricted access');
 
 $group_id 		= $params->get('group_id');
-$width 			= $params->get('width');
+$widthvk 		= $params->get('widthvk');
+$heightvk 		= $params->get('heightvk');
 $mode 			= $params->get('mode');
-$height 		= $params->get('height');
 $wide 			= $params->get('wide');
+$widthok 		= $params->get('widthok');
+$heightok 		= $params->get('heightok');
+$heightfb 		= $params->get('heightfb');
+$widthfb		= $params->get('widthfb');
+$heightgp 		= $params->get('heightgp');
+$widthgp 		= $params->get('widthgp');
 $group_id_ok	= $params->get('group_id_ok');
 $fbappid		= $params->get('fbappid');
 $group_id_fb	= $params->get('group_id_fb');

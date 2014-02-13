@@ -56,6 +56,10 @@ HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { $scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup$module->id" data-toggle="tab">G+</a></li>
+					 		<script type="text/javascript" src="https://apis.google.com/js/platform.js">
+		  {lang: '$googlelang', parsetags: 'explicit'}
+		</script>
+		<div  class="g-plus" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
 					 
 HTML;
 					} else {$scriptPage .='';} break;
@@ -82,7 +86,7 @@ foreach ($orders as $order) {
 	<div class="tab-pane active" id="vkgroup$module->id">
 	<div  id="jlvkgrouppro$group_id"></div>
 	<script type="text/javascript">
-		VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$width", height: "$height"}, $group_id);
+		VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
 	</script>
     </div>
 HTML;
@@ -107,7 +111,7 @@ HTML;
 			  }
 			  d.documentElement.appendChild(js);
 			}
-			(document, "ok_grouppro_widget$module->id", $group_id_ok, '{width: "$width",height: "$height"}');
+			(document, "ok_grouppro_widget$module->id", $group_id_ok, '{width: "$widthok",height: "$heightok"}');
 			</script>
     </div>
 HTML;
@@ -125,21 +129,16 @@ HTML;
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 
-			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$width" data-height="$height" data-show-faces="true" data-stream="false" data-header="true"></div>
+			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="true" data-stream="false" data-header="true"></div>
     </div>
 HTML;
 						} else {$scriptPage .='';} break;
 		case 4:	
 	if ($showgoogle) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="ggroup$module->id">
-		<style>
-	
-						div[id*=plus_] * {min-height:{$height}px !important;}
-		</style>
-		<script type="text/javascript" src="https://apis.google.com/js/platform.js">
-		  {lang: '$googlelang', parsetags: 'explicit'}
-		</script>
-		<div  class="g-plus" data-width="$width" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+
+
+		<script type="text/javascript">gapi.page.go();</script>
 	
 		
     </div>
