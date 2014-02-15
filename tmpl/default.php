@@ -124,7 +124,7 @@ HTML;
 					  fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 				</script>
-			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="$datashowfacesfb" data-stream="$datastreamfb" data-colorscheme="$datashowfacesfb" data-header="true"></div>
+			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="$datashowfacesfb" data-stream="$datastreamfb" data-colorscheme="$colorschemefb" data-header="true"></div>
 		</div>
 HTML;
 						} else {$scriptPage .='';} break;
