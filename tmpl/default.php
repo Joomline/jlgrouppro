@@ -81,9 +81,9 @@ foreach ($orders as $order) {
 	case 1:
 	if ($showvkontakte) { $scriptPage .= <<<HTML
 		<div class="tab-pane active" id="vkgroup$module->id">
-			<div  id="jlvkgrouppro$group_id"></div>
+			<div  id="jlvkgrouppro$module->id"></div>
 			<script type="text/javascript">
-				VK.Widgets.Group("jlvkgrouppro$group_id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
+				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
 			</script>
 		</div>
 HTML;
