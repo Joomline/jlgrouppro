@@ -40,30 +40,34 @@ foreach ($orders as $order) {
 					$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
 					$scriptPage .= <<<HTML
 					<style>
-					#vkgroup div, #vkgroup$module->id iframe { height: {$height}px!important; }
-						</style>
-						<li style="list-style-type: none;"><a data-target="#vkgroup$module->id" href="#" data-toggle="tab">VK</a></li>		
+						#vkgroup$module->id div, #jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
+					</style>
+						<li style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab">VK</a></li>		
 	
 					
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
-					<li style="list-style-type: none;"><a href="#" data-target="#okgroup$module->id" data-toggle="tab">ОК</a></li>
+					<li style="list-style-type: none;"><a href="#okgroup$module->id"  data-toggle="tab">ОК</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#fbgroup$module->id" data-toggle="tab">FB</a></li>
+					 <li style="list-style-type: none;"><a href="#fbgroup$module->id" data-toggle="tab">FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { 
 				$scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#ggroup$module->id" data-toggle="tab">G+</a></li>
+			<style>
+				div[id*=page_] * {min-height:{$heightgp}px !important;}
+				#ggroup$module->id div, #div[id*=page_] iframe * {min-height:{$heightgp}px !important;}
+			</style>
+					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab">G+</a></li>
 					 
 HTML;
 					} else {$scriptPage .='';} break;
 					
 				case 5:	if ($showtwitter) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#" data-target="#twittergroup$module->id" data-toggle="tab">Twitter</a></li>
+					 <li style="list-style-type: none;"><a href="#twittergroup$module->id" data-toggle="tab">Twitter</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}
@@ -133,13 +137,10 @@ HTML;
 	$doc->addCustomTag('<link href="https://plus.google.com/'.$googleid.'" rel="publisher" />');
 	$scriptPage .= <<<HTML
 		<div class="tab-pane" id="ggroup$module->id">
-			<style>
-				div[id*=plus_] * {min-height:{$heightgp}px !important;}
-			</style>
 			<script type="text/javascript" src="https://apis.google.com/js/platform.js">
-				{lang: '$googlelang', parsetags: 'explicit'}
+				{lang: '$googlelang'}
 			</script>
-			<div  class="g-plus" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+			<div  class="g-page" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
 		</div>
 HTML;
 						} else {$scriptPage .='';} break;
