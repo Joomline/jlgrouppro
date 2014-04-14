@@ -148,7 +148,9 @@ case 5:
 	if ($showtwitter) { $scriptPage .= <<<HTML
 	<div class="tab-pane" id="twittergroup$module->id">
 		<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+		
+		<a class="twitter-timeline" height="$heighttw"  data-chrome="nofooter transparent noscrollbar noheader" href="https://twitter.com/$twitterid" data-widget-id="$twitteridwz">Tweets by @$twitterid</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 HTML;
 						} else {$scriptPage .='';} break;

@@ -44,6 +44,9 @@ $link 			= $params->get('link');
 $colorschemefb 	= $params->get('colorschemefb');
 $datastreamfb 	= $params->get('datastreamfb');
 $datashowfacesfb = $params->get('datashowfacesfb');
+$heighttw		= $params->get('heighttw');
+$twitteridwz		= $params->get('twitteridwz');
+$showtwitterpost 	= $params->get('showtwitterpost');
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 
 require_once dirname(__FILE__).'/helper.php';
