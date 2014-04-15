@@ -7,7 +7,7 @@
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2013 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>1.5.1</version>
+	<version>1.5.5</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
