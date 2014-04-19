@@ -42,7 +42,7 @@ foreach ($orders as $order) {
 					<style>
 						#vkgroup$module->id div, #jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
 					</style>
-						<li style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab">VK</a></li>		
+						<li class="active" style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab">VK</a></li>		
 	
 					
 HTML;
@@ -84,7 +84,7 @@ foreach ($orders as $order) {
 	switch($order) {		
 	case 1:
 	if ($showvkontakte) { $scriptPage .= <<<HTML
-		<div class="tab-pane" id="vkgroup$module->id">
+		<div class="tab-pane active" id="vkgroup$module->id">
 			<div  id="jlvkgrouppro$module->id"></div>
 			<script type="text/javascript">
 				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
