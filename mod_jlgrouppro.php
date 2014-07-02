@@ -31,7 +31,9 @@ $orders 		= explode(",",$params->get('orders'));
 $typeviewerjq 	= $params->get('typeviewerjq');
 $typeviewerbs 	= $params->get('typeviewerbs');
 $typeviewernojq = $params->get('typeviewernojq');
-$scriptPage='';
+$scriptPage = '';
+$googlegroup = '';
+$gpade= '';
 $fblang 		= $params->get('fblang');
 $googleid		= $params->get('googleid');
 $googlelang		= $params->get('googlelang');
@@ -48,6 +50,7 @@ $heighttw		= $params->get('heighttw');
 $twitteridwz		= $params->get('twitteridwz');
 $showtwitterpost 	= $params->get('showtwitterpost');
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
+$groupgoogle 	= $params->get('groupgoogle');
 
 require_once dirname(__FILE__).'/helper.php';
 

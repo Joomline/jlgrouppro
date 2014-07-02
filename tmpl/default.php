@@ -30,7 +30,16 @@ if ($link==0){
 	$linknone = 'display:none;';
 	}
 else {}
+If ($groupgoogle==1) {
+	$googlegroup="communities/";
+	$gpage="g-community";
+	}
+If ($groupgoogle==0) {
+	$gpage="g-page";
+	}
+else {}
 ?>
+
 <div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
 <br clear="all"><div id="jlcomments_container<?php echo $module->id; ?>"><ul class="nav nav-tabs" id="jlgrouppro<?php echo $module->id; ?>">
 <?php
@@ -60,6 +69,8 @@ HTML;
 			<style>
 				div[id*=page_] * {min-height:{$heightgp}px !important;}
 				#ggroup$module->id div, #div[id*=page_] iframe * {min-height:{$heightgp}px !important;}
+				div[id*=community_] * {min-height:{$heightgp}px !important;}
+				#ggroup$module->id div, #div[id*=community_] iframe * {min-height:{$heightgp}px !important;}
 			</style>
 					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab">G+</a></li>
 					 
@@ -140,7 +151,7 @@ HTML;
 			<script type="text/javascript" src="https://apis.google.com/js/platform.js">
 				{lang: '$googlelang'}
 			</script>
-			<div  class="g-page" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googleid" data-rel="publisher"></div>
+			<div  class="$gpage" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googlegroup$googleid" data-rel="publisher"></div>
 		</div>
 HTML;
 						} else {$scriptPage .='';} break;
