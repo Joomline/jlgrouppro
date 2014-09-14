@@ -68,6 +68,9 @@
 				<option value="0">MOD_JLGROUPPRO_YES</option>
 				<option value="1">MOD_JLGROUPPRO_NO</option>
 			</field>
+			<field name="color1" type="text" label="MOD_JLGROUPPRO_COLOR1_LABEL" description="MOD_JLGROUPPRO_COLOR1_DESCRIPTION" default="FFFFFF"/>
+			<field name="color2" type="text" label="MOD_JLGROUPPRO_COLOR2_LABEL" description="MOD_JLGROUPPRO_COLOR2_DESCRIPTION" default="2B587A"/>
+			<field name="color3" type="text" label="MOD_JLGROUPPRO_COLOR3_LABEL" description="MOD_JLGROUPPRO_COLOR3_DESCRIPTION" default="5B7FA6"/>
 			<field name="widthvk" type="text" label="MOD_JLGROUPPRO_WIDTH_LABEL" description="MOD_JLGROUPPRO_WIDTH_DESCRIPTION" default="300"/>
 			<field name="heightvk" type="text" label="MOD_JLGROUPPRO_HEIGHT_LABEL" description="MOD_JLGROUPPRO_HEIGHT_DESCRIPTION" default="300"/>
 		</fieldset>

@@ -51,6 +51,9 @@ $twitteridwz		= $params->get('twitteridwz');
 $showtwitterpost 	= $params->get('showtwitterpost');
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $groupgoogle 	= $params->get('groupgoogle');
+$color1		= $params->get('color1');
+$color2 	= $params->get('color2');
+$color3 	= $params->get('color3');
 
 require_once dirname(__FILE__).'/helper.php';
 

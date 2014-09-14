@@ -98,7 +98,7 @@ foreach ($orders as $order) {
 		<div class="tab-pane active" id="vkgroup$module->id">
 			<div  id="jlvkgrouppro$module->id"></div>
 			<script type="text/javascript">
-				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk"}, $group_id);
+				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk", color1: '$color1', color2: '$color2', color3: '$color3'}, $group_id);
 			</script>
 		</div>
 HTML;
