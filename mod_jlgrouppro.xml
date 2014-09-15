@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5" method="upgrade">
 	<name>MOD_JLGROUPPRO</name>
-	<creationDate>2013-05-05</creationDate>
+	<creationDate>2014-09-16</creationDate>
 	<author>JoomLine</author>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2013 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>1.5.6</version>
+	<version>1.6</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
@@ -15,6 +15,7 @@
         <filename>helper.php</filename>
         <folder>tmpl</folder>
 		<folder>css</folder>
+		<folder>js</folder>
 	</files>
     <languages folder="language">
         <language tag="ru-RU">ru-RU/ru-RU.mod_jlgrouppro.ini</language>
@@ -44,10 +45,15 @@
 				 <option value="0">MOD_JLGROUPPRO_NO</option>
 				 <option value="1">MOD_JLGROUPPRO_YES</option>
 			</field>
-			<field name="typeviewercss" type="radio" default="1" label="PLG_JLGROUPPRO_TYPEVIEWERCSS_LABEL" >
+			<field name="typeviewercss" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWERCSS_LABEL" >
 				<option value="0">MOD_JLGROUPPRO_NO</option>
 				<option value="1">MOD_JLGROUPPRO_YES</option>		
 			</field>
+			<field name="timertrue" type="radio" default="0" label="MOD_JLGROUPPRO_TIMERTRUE_LABEL" >
+				<option value="0">MOD_JLGROUPPRO_NO</option>
+				<option value="1">MOD_JLGROUPPRO_YES</option>		
+			</field>
+			<field name="timertime" type="text" label="MOD_JLGROUPPRO_TIMERTIME_LABEL" default="10000" description="MOD_JLGROUPPRO_TIMERTIME_DESC"/>
 			<field name="link" type="radio" label="MOD_JLGROUPPRO_LINK_LABEL" description="MOD_JLGROUPPRO_LINK_DESCRIPTION" default="1">
 				<option value="1">MOD_JLGROUPPRO_NO</option>
 				<option value="0">MOD_JLGROUPPRO_YES</option>

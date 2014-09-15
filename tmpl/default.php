@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.2
+ * @version 1.6
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -29,6 +29,9 @@ If ($typeviewernojq==1) {
 if ($link==0){
 	$linknone = 'display:none;';
 	}
+If ($timertrue==1) {
+	$doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/script.js");
+	}
 else {}
 If ($groupgoogle==1) {
 	$googlegroup="communities/";
@@ -43,17 +46,19 @@ else {}
 <div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
 <br clear="all"><div id="jlcomments_container<?php echo $module->id; ?>"><ul class="nav nav-tabs" id="jlgrouppro<?php echo $module->id; ?>">
 <?php
+$style = ''; 
 foreach ($orders as $order) {
 			switch($order) {
 				case 1:	if ($showvkontakte) { 
 					$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
-					$scriptPage .= <<<HTML
+$style .= <<<HTML
 					<style>
 						#vkgroup$module->id div, #jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
 					</style>
+HTML;
+$scriptPage .= <<<HTML
 						<li class="active" style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab">VK</a></li>		
-	
-					
+
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
@@ -65,15 +70,16 @@ HTML;
 HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { 
-				$scriptPage .= <<<HTML
+$style .= <<<HTML
 			<style>
 				div[id*=page_] * {min-height:{$heightgp}px !important;}
 				#ggroup$module->id div, #div[id*=page_] iframe * {min-height:{$heightgp}px !important;}
 				div[id*=community_] * {min-height:{$heightgp}px !important;}
 				#ggroup$module->id div, #div[id*=community_] iframe * {min-height:{$heightgp}px !important;}
-			</style>
+			</style>	 
+HTML;
+$scriptPage .= <<<HTML
 					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab">G+</a></li>
-					 
 HTML;
 					} else {$scriptPage .='';} break;
 					
@@ -87,7 +93,7 @@ echo $scriptPage;
 $scriptPage	='';
 ?>
 </ul>
-
+<?php echo $style; ?>
 <div class="tab-content">
 
 <?php
@@ -179,4 +185,8 @@ echo $scriptPage;
 jQuery(document).ready(function(){
 jQuery('#jlgrouppro<?php echo $module->id; ?> a:first').tab('show');
 });
+var jlgrouppro = {
+id: <?php echo $module->id; ?>,
+timeout: <?php echo $timertime; ?>
+}
 </script>

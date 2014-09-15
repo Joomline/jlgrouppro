@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.1
+ * @version 1.6
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -54,6 +54,9 @@ $groupgoogle 	= $params->get('groupgoogle');
 $color1		= $params->get('color1');
 $color2 	= $params->get('color2');
 $color3 	= $params->get('color3');
+$timertrue 	= $params->get('timertrue');
+$timertime 	= $params->get('timertime');
+
 
 require_once dirname(__FILE__).'/helper.php';
 
