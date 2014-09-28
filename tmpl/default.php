@@ -57,16 +57,16 @@ $style .= <<<HTML
 					</style>
 HTML;
 $scriptPage .= <<<HTML
-						<li class="active" style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab">VK</a></li>		
+						<li class="active" style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab"><i class="jlico-vk"></i> VK</a></li>		
 
 HTML;
 						} else {$scriptPage .='';} break;
 				case 2:	if ($showok) { $scriptPage .= <<<HTML
-					<li style="list-style-type: none;"><a href="#okgroup$module->id"  data-toggle="tab">ОК</a></li>
+					<li style="list-style-type: none;"><a href="#okgroup$module->id"  data-toggle="tab"><i class="jlico-ok"></i> ОК</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#fbgroup$module->id" data-toggle="tab">FB</a></li>
+					 <li style="list-style-type: none;"><a href="#fbgroup$module->id" data-toggle="tab"><i class="jlico-facebook"></i> FB</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 				case 4:	if ($showgoogle) { 
@@ -79,12 +79,12 @@ $style .= <<<HTML
 			</style>	 
 HTML;
 $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab">G+</a></li>
+					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab"><i class="jlico-google"></i> G+</a></li>
 HTML;
 					} else {$scriptPage .='';} break;
 					
 				case 5:	if ($showtwitter) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#twittergroup$module->id" data-toggle="tab">Twitter</a></li>
+					 <li style="list-style-type: none;"><a href="#twittergroup$module->id" data-toggle="tab"><i class="jlico-twitter"></i> Twitter</a></li>
 HTML;
 						} else {$scriptPage .='';} break;
 			}

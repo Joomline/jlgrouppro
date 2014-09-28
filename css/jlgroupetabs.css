@@ -28,3 +28,8 @@ div[id*=jlcomments_container] .tab-content > .tab-pane{display:none;}
 div[id*=jlcomments_container] .tab-content > .active{display:block;}
 div[id*=jlcomments_container] .nav > .disabled > a{color:#999999;}
 div[id*=jlcomments_container] .nav > .disabled > a:hover, div[id*=jlcomments_container] .nav > .disabled > a:focus{text-decoration:none;background-color:transparent;cursor:default;}
+.jlico-facebook {background: url("/modules/mod_jlgrouppro/css/facebook.png")  no-repeat local 0 2px rgba(0, 0, 0, 0);display: inline-block;height: 14px;width: 12px;}
+.jlico-vk {background: url("/modules/mod_jlgrouppro/css/vk.png")  no-repeat local 0 2px rgba(0, 0, 0, 0);display: inline-block;height: 14px;width: 12px;}
+.jlico-google {background: url("/modules/mod_jlgrouppro/css/google.png")  no-repeat local 0 2px rgba(0, 0, 0, 0);display: inline-block;height: 14px;width: 12px;}
+.jlico-ok {background: url("/modules/mod_jlgrouppro/css/ok.png")  no-repeat local 0 2px rgba(0, 0, 0, 0);display: inline-block;height: 14px;width: 12px;}
+.jlico-twitter {background: url("/modules/mod_jlgrouppro/css/twitter.png")  no-repeat local 0 2px rgba(0, 0, 0, 0);display: inline-block;height: 14px;width: 12px;}
