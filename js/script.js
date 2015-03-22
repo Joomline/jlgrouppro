@@ -1,31 +1,22 @@
 
 function ListTabs() 
 { 
-  var tabs  =  jQuery('#jlgrouppro'+jlgrouppro.id);
-  var liActive = jQuery('li.active', tabs);
-  var nextContent;
-  var currentContent = jQuery(jQuery('a', liActive).attr('href'));
-  var next = liActive.next();
-  
-  if(next.length >0)
-  {
-	nextContent = jQuery(jQuery('a', next).attr('href'));
-  }
+  var tabs  =  jQuery('#jlgroupprocustom'+jlgrouppro.id+' input[type=radio]' );
+  var selected = jQuery('#jlgroupprocustom'+jlgrouppro.id+' input:checked' );
+  var n = tabs.index(selected);
+  var countTabs = tabs.length;
+
+ 
+  if((n+1) < countTabs)
+	n = n+1;
   else
-  {
-	next = jQuery('li:first', tabs);
-	nextContent = jQuery(jQuery('a', next).attr('href'));
-  }
-  
-  liActive.removeClass('active');
-  next.addClass('active');
-  currentContent.hide();
-  nextContent.show(); 
+	n = 0;
+
+  tabs[n].click();
 }
 
 
 jQuery(document).ready(function(){
 
-	setInterval(ListTabs, +jlgrouppro.timeout);
-	
+  setInterval(ListTabs, +jlgrouppro.timeout);
 });

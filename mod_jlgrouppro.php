@@ -10,6 +10,8 @@
 // No direct access
 defined('_JEXEC') or die('Restricted access');
 
+require_once dirname(__FILE__).'/helper.php';
+
 $group_id 		= $params->get('group_id');
 $widthvk 		= $params->get('widthvk');
 $heightvk 		= $params->get('heightvk');
@@ -31,6 +33,7 @@ $orders 		= explode(",",$params->get('orders'));
 $typeviewerjq 	= $params->get('typeviewerjq');
 $typeviewerbs 	= $params->get('typeviewerbs');
 $typeviewernojq = $params->get('typeviewernojq');
+$allow 			= modJLGroupProHelper::getalw($params);
 $scriptPage = '';
 $googlegroup = '';
 $gpade= '';
@@ -56,8 +59,6 @@ $color2 	= $params->get('color2');
 $color3 	= $params->get('color3');
 $timertrue 	= $params->get('timertrue');
 $timertime 	= $params->get('timertime');
-
-
-require_once dirname(__FILE__).'/helper.php';
+$popuptrue 	= $params->get('popuptrue');
 
 require JModuleHelper::getLayoutPath('mod_jlgrouppro', $params->get('layout', 'default'));

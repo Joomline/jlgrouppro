@@ -26,29 +26,17 @@
 
 	<config>
 		<fields name="params">
-        <fieldset name="tp5" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS">
+        <fieldset name="basic" type="spacer" class="text" label="MOD_JLGROUPPRO_ALL_SETTINGS">
+			<field name="secretkey" type="text" label="MOD_JLGROUPPRO_SECRETKEY_LABEL" description="MOD_JLGROUPPRO_SECRETKEY_DESC" />
 			<field name="orders" type="text" label="MOD_JLGROUPPRO_ORDERS_LABEL" default="1,2,3,4,5" description="MOD_JLGROUPPRO_ORDERS_DESC"/>
 			<field name="googlelang" type="radio" default="ru" label="MOD_JLGROUPPRO_GOOGLELANG_LABEL" >
 				 <option value="ru">Русский</option>
 				 <option value="en">English</option>
 			</field>
-			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-			<field name="typeviewerjq" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWER_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>
-			<field name="typeviewerbs" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWERBS_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>
-			<field name="typeviewernojq" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWERNOJQ_LABEL" >
-				 <option value="0">MOD_JLGROUPPRO_NO</option>
-				 <option value="1">MOD_JLGROUPPRO_YES</option>
-			</field>
-			<field name="typeviewercss" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWERCSS_LABEL" >
+			<field name="popuptrue" type="radio" default="0" label="MOD_JLGROUPPRO_POPUPTRUE_LABEL" description="MOD_JLGROUPPRO_POPUPTRUE_DESC" >
 				<option value="0">MOD_JLGROUPPRO_NO</option>
 				<option value="1">MOD_JLGROUPPRO_YES</option>		
-			</field>
+			</field>			
 			<field name="timertrue" type="radio" default="0" label="MOD_JLGROUPPRO_TIMERTRUE_LABEL" >
 				<option value="0">MOD_JLGROUPPRO_NO</option>
 				<option value="1">MOD_JLGROUPPRO_YES</option>		
@@ -57,7 +45,16 @@
 			<field name="link" type="radio" label="MOD_JLGROUPPRO_LINK_LABEL" description="MOD_JLGROUPPRO_LINK_DESCRIPTION" default="1">
 				<option value="1">MOD_JLGROUPPRO_NO</option>
 				<option value="0">MOD_JLGROUPPRO_YES</option>
+			</field>			
+			<field name="typeviewerjq" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWER_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
 			</field>
+			<field name="typeviewernojq" type="radio" default="1" label="MOD_JLGROUPPRO_TYPEVIEWERNOJQ_LABEL" >
+				 <option value="0">MOD_JLGROUPPRO_NO</option>
+				 <option value="1">MOD_JLGROUPPRO_YES</option>
+			</field>
+			<field	name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 		</fieldset>
 		<fieldset name="tp1" type="spacer" class="text" label="MOD_JLGROUPPRO_VK_SETTINGS">
 			<field name="showvkontakte" type="radio" default="1" label="MOD_JLGROUPPRO_SHOWVKONTAKTE_LABEL" description="MOD_JLGROUPPRO_SHOWVKONTAKTE_DESC">

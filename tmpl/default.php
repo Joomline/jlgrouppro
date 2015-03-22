@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.6
+ * @version 1.7
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *
@@ -10,98 +10,61 @@
 // No direct access
 
 $doc = JFactory::getDocument();
-
-
-If ($typeviewercss==1) {
-	$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
-	}
-
-If ($typeviewerjq==1) {
+$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
+if ($typeviewerjq==1) {
 	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
 	}
-
-If ($typeviewerbs==1) {
-	$doc->addCustomTag('<script src="http://yandex.st/bootstrap/2.3.0/js/bootstrap.min.js"></script>');
-	}
-If ($typeviewernojq==1) {
+if ($typeviewernojq==1) {
 	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
 	}
 if ($link==0){
 	$linknone = 'display:none;';
 	}
-If ($timertrue==1) {
+if ($timertrue==1) {
 	$doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/script.js");
 	}
 else {}
-If ($groupgoogle==1) {
+if ($groupgoogle==1) {
 	$googlegroup="communities/";
 	$gpage="g-community";
 	}
-If ($groupgoogle==0) {
+if ($groupgoogle==0) {
 	$gpage="g-page";
 	}
 else {}
-?>
-
-<div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
-<br clear="all"><div id="jlcomments_container<?php echo $module->id; ?>"><ul class="nav nav-tabs" id="jlgrouppro<?php echo $module->id; ?>">
-<?php
-$style = ''; 
-foreach ($orders as $order) {
-			switch($order) {
-				case 1:	if ($showvkontakte) { 
-					$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
-$style .= <<<HTML
-					<style>
-						#vkgroup$module->id div, #jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
-					</style>
-HTML;
-$scriptPage .= <<<HTML
-						<li class="active" style="list-style-type: none;"><a  href="#vkgroup$module->id" data-toggle="tab"><i class="jlico-vk"></i> VK</a></li>		
-
-HTML;
-						} else {$scriptPage .='';} break;
-				case 2:	if ($showok) { $scriptPage .= <<<HTML
-					<li style="list-style-type: none;"><a href="#okgroup$module->id"  data-toggle="tab"><i class="jlico-ok"></i> ОК</a></li>
-HTML;
-						} else {$scriptPage .='';} break;
-				case 3:	if ($showfacebook) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#fbgroup$module->id" data-toggle="tab"><i class="jlico-facebook"></i> FB</a></li>
-HTML;
-						} else {$scriptPage .='';} break;
-				case 4:	if ($showgoogle) { 
-$style .= <<<HTML
-			<style>
-				div[id*=page_] * {min-height:{$heightgp}px !important;}
-				#ggroup$module->id div, #div[id*=page_] iframe * {min-height:{$heightgp}px !important;}
-				div[id*=community_] * {min-height:{$heightgp}px !important;}
-				#ggroup$module->id div, #div[id*=community_] iframe * {min-height:{$heightgp}px !important;}
-			</style>	 
-HTML;
-$scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#ggroup$module->id" data-toggle="tab"><i class="jlico-google"></i> G+</a></li>
-HTML;
-					} else {$scriptPage .='';} break;
-					
-				case 5:	if ($showtwitter) { $scriptPage .= <<<HTML
-					 <li style="list-style-type: none;"><a href="#twittergroup$module->id" data-toggle="tab"><i class="jlico-twitter"></i> Twitter</a></li>
-HTML;
-						} else {$scriptPage .='';} break;
-			}
-		}
-echo $scriptPage;
 $scriptPage	='';
 ?>
-</ul>
-<?php echo $style; ?>
-<div class="tab-content">
-
+<?php if (!$allow): ?>
 <?php
+if ($popuptrue==1) { 
+$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/popup.css");
+$doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/jquery.cookie.js");
+?>
+<div id="parent_popup">
+<div id="popup">
+<?php 
+}else {};
+endif; ?>
+<div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
+
+<div class="csstabs<?php echo $module->id; ?>">
+<?php
+$idtab=1;
 foreach ($orders as $order) {		
+	$checked =  ($idtab==1) ? ' checked ' : '';
 	switch($order) {		
 	case 1:
-	if ($showvkontakte) { $scriptPage .= <<<HTML
-		<div class="tab-pane active" id="vkgroup$module->id">
+	if ($showvkontakte) { 
+	$doc->addCustomTag('<script src="//vk.com/js/api/openapi.js?87"></script>');
+	
+	$scriptPage .= <<<HTML
+	<style>
+		#jlvkgrouppro$module->id, div#jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
+	</style>
+	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-vk"></i> VK</label>
+	<input id="tab$idtab-$module->id" type="radio" name="$module->id" $checked $checked_vk name="radiobutton">
+		<div  id="vkgroup$module->id">
+		<div class="tab$idtab-$module->id"><i class="jlico-vk"></i> VK</div>
 			<div  id="jlvkgrouppro$module->id"></div>
 			<script type="text/javascript">
 				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk", color1: '$color1', color2: '$color2', color3: '$color3'}, $group_id);
@@ -109,10 +72,13 @@ foreach ($orders as $order) {
 		</div>
 HTML;
 	
-						} else {$scriptPage .='';} break;
+					$idtab++;	} else {$scriptPage .='';} break;
 	case 2:	
 	if ($showok) { $scriptPage .= <<<HTML
-		<div class="tab-pane" id="okgroup$module->id">
+	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-ok"></i> ОК</label>
+	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
+		<div id="okgroup$module->id">
+			<div class="tab$idtab-$module->id"><i class="jlico-ok"></i> ОК</div>
 				<div id="ok_grouppro_widget$module->id"></div>
 				<script>
 					!function(d,id,did,st){
@@ -132,10 +98,13 @@ HTML;
 				</script>
 		</div>
 HTML;
-						} else {$scriptPage .='';} break;
+					$idtab++;	} else {$scriptPage .='';} break;
 	case 3:	
 	if ($showfacebook) { $scriptPage .= <<<HTML
-		<div class="tab-pane" id="fbgroup$module->id">
+	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-facebook"></i> FB</label>
+	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">		
+		<div id="fbgroup$module->id">
+		<div class="tab$idtab-$module->id"><i class="jlico-facebook"></i> FB</div>
 			<div id="fb-root"></div>
 				<script>(function(d, s, id) {
 					  var js, fjs = d.getElementsByTagName(s)[0];
@@ -148,45 +117,87 @@ HTML;
 			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="$datashowfacesfb" data-stream="$datastreamfb" data-colorscheme="$colorschemefb" data-header="true"></div>
 		</div>
 HTML;
-						} else {$scriptPage .='';} break;
+					$idtab++;	} else {$scriptPage .='';} break;
 		case 4:	
 	if ($showgoogle) { 
 	$doc->addCustomTag('<link href="https://plus.google.com/'.$googleid.'" rel="publisher" />');
 	$scriptPage .= <<<HTML
-		<div class="tab-pane" id="ggroup$module->id">
+	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-google"></i> G+</label>
+	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
+		<div id="ggroup$module->id">
+			<div class="tab$idtab-$module->id"><i class="jlico-google"></i> G+</div>
 			<script type="text/javascript" src="https://apis.google.com/js/platform.js">
 				{lang: '$googlelang'}
 			</script>
 			<div  class="$gpage" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googlegroup$googleid" data-rel="publisher"></div>
 		</div>
 HTML;
-						} else {$scriptPage .='';} break;
+					$idtab++;	} else {$scriptPage .='';} break;
 case 5:	
 	if ($showtwitter) { $scriptPage .= <<<HTML
-	<div class="tab-pane" id="twittergroup$module->id">
-		<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
-		
-		<a class="twitter-timeline" height="$heighttw"  data-chrome="nofooter transparent noscrollbar noheader" href="https://twitter.com/$twitterid" data-widget-id="$twitteridwz">Tweets by @$twitterid</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
+	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-twitter"></i> TW</label>
+	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" name="radiobutton">
+	<div   id="twittergroup$module->id">
+		<div class="tab$idtab-$module->id"><i class="jlico-twitter"></i> TW</div>
+			<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
+			
+			<a class="twitter-timeline" height="$heighttw"  data-chrome="nofooter transparent noscrollbar noheader" href="https://twitter.com/$twitterid" data-widget-id="$twitteridwz">Tweets by @$twitterid</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
 HTML;
-						} else {$scriptPage .='';} break;
+					$idtab++;	} else {$scriptPage .='';} break;
 }}
 echo $scriptPage;
 ?>
 </div>	
+	<?php if($allow): ?>
 	<div style="text-align: right; <?php echo $linknone;?>">
 		<a style="text-decoration:none; color: #c0c0c0; font-family: arial,helvetica,sans-serif; font-size: 5pt; " target="_blank" href="http://joomline.org/">Extension Joomla</a>
 	</div>	
-</div>
+	<?php endif; ?>
 </div>
 
+<?php if (!$allow): 
+if ($popuptrue==1) { 
+?>
+<a id="setCookie" class="close" title="Закрыть" onclick="document.getElementById('parent_popup').style.display='none';">X</a>
+</div>
+</div>
+<?php 
+}else {};
+endif; 
+?>
+<br clear="all">
 <script type="text/javascript">
-jQuery(document).ready(function(){
-jQuery('#jlgrouppro<?php echo $module->id; ?> a:first').tab('show');
-});
 var jlgrouppro = {
 id: <?php echo $module->id; ?>,
 timeout: <?php echo $timertime; ?>
 }
 </script>
+
+<?php if (!$allow): 
+if ($popuptrue==1) { 
+?>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+
+jQuery("#setCookie").click(function () {
+jQuery.cookie("popup", "72house", {expires: 5} );
+jQuery("#parent_popup").hide();
+});
+
+if ( jQuery.cookie("popup") == null )
+{
+setTimeout(function(){
+jQuery("#parent_popup").show();
+}, 5000)
+}
+else { jQuery("#parent_popup").hide();
+}
+
+});
+</script>
+<?php 
+}else {};
+endif; 
+?>
