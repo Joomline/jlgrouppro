@@ -10,7 +10,7 @@
 }
 #popup { 
   background: #fff;
-    width: 400px;
+    width: 30%;
 	height:auto;
     margin: 10% auto;
 	padding: 5px 20px 13px 20px;
@@ -50,4 +50,8 @@ opacity: 1;
 }
 .close:hover {
     background-color: rgba(0, 122, 200, 0.8);
+}
+
+#popup div.jlgroupprocustom{
+margin: 0 10% 0 15%;
 }

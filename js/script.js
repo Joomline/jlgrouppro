@@ -1,4 +1,4 @@
-
+var jqjlpro = jQuery.noConflict();
 function ListTabs() 
 { 
   var tabs  =  jQuery('#jlgroupprocustom'+jlgrouppro.id+' input[type=radio]' );

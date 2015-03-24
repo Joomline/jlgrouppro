@@ -12,11 +12,11 @@
 $doc = JFactory::getDocument();
 $doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
 if ($typeviewerjq==1) {
-	$doc->addCustomTag('<script src="http://yandex.st/jquery/1.9.1/jquery.min.js"></script>');
+	$doc->addScript("http://yandex.st/jquery/1.11.2/jquery.min.js");
 	}
-if ($typeviewernojq==1) {
-	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
-	}
+//if ($typeviewernojq==1) {
+//	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
+//	}
 if ($link==0){
 	$linknone = 'display:none;';
 	}
@@ -45,7 +45,7 @@ $doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/jquery.cookie.js");
 <?php 
 }else {};
 endif; ?>
-<div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom<?php echo $moduleclass_sfx ?>">
+<div id="jlgroupprocustom<?php echo $module->id; ?>" class="jlgroupprocustom">
 
 <div class="csstabs<?php echo $module->id; ?>">
 <?php
@@ -122,14 +122,22 @@ HTML;
 	if ($showgoogle) { 
 	$doc->addCustomTag('<link href="https://plus.google.com/'.$googleid.'" rel="publisher" />');
 	$scriptPage .= <<<HTML
+	<style>
+		div[id*=page_] * {min-height:{$heightgp}px !important;}
+		#ggroupcontent$module->id, #div[id*=page_] iframe * {min-height:{$heightgp}px !important;}
+		div[id*=community_] * {min-height:{$heightgp}px !important;}
+		#ggroupcontent$module->id, #div[id*=community_] iframe * {min-height:{$heightgp}px !important;}
+	</style>	 
 	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-google"></i> G+</label>
 	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
 		<div id="ggroup$module->id">
 			<div class="tab$idtab-$module->id"><i class="jlico-google"></i> G+</div>
-			<script type="text/javascript" src="https://apis.google.com/js/platform.js">
-				{lang: '$googlelang'}
-			</script>
-			<div  class="$gpage" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googlegroup$googleid" data-rel="publisher"></div>
+			<div id="ggroupcontent$module->id">
+				<script type="text/javascript" src="https://apis.google.com/js/platform.js">
+					{lang: '$googlelang'}
+				</script>			
+				<div  class="$gpage" data-width="$widthgp" data-height="$heightgp" data-href="//plus.google.com/$googlegroup$googleid" data-rel="publisher"></div>
+			</div>
 		</div>
 HTML;
 					$idtab++;	} else {$scriptPage .='';} break;

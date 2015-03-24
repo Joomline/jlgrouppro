@@ -10,7 +10,7 @@
 }
 
 .jlgroupprocustom {
-padding-top: 20px;
+padding-top: 40px;
 }
 
 div[class*=csstabs] {
@@ -25,7 +25,7 @@ div[class*=csstabs] {
 	top:-30px;
 	background:#ddd;
 	line-height:30px;
-	padding:0 10px;
+	padding:0 5px;
 	cursor:pointer;
 }
 
@@ -35,19 +35,19 @@ div[class*=csstabs] {
 	}
 	[class*=tab2-] {
 		width:40px;
-		left:70px;
+		left:60px;
 	}
 	[class*=tab3-] {
 		width:40px;
-		left:140px;
+		left:120px;
 	}
 	[class*=tab4-] {
 		width:40px;
-		left:210px;
+		left:180px;
 	}
 	[class*=tab5-] {
 		width:40px;
-		left:280px;
+		left:240px;
 	}
 
 
@@ -56,13 +56,13 @@ div[class*=csstabs] input {
 }
 div[class*=csstabs] input + * {
 	width:100%;
-	float:left;
+
 	display:none;
 }
 div[class*=csstabs] input:checked + * {
 	display:block;
 	position:relative;
-	padding:20px;
+	padding-top:15px;
 }
 div[class*=csstabs] input:checked + * *:first-child {
 	background:#F0F0F0;
