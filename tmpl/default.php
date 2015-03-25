@@ -12,16 +12,16 @@
 $doc = JFactory::getDocument();
 $doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
 if ($typeviewerjq==1) {
-	$doc->addScript("http://yandex.st/jquery/1.11.2/jquery.min.js");
+	$doc->addCustomTag ('<script src="http://yandex.st/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>');
 	}
-//if ($typeviewernojq==1) {
-//	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
-//	}
+if ($typeviewernojq==1) {
+	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
+	}
 if ($link==0){
 	$linknone = 'display:none;';
 	}
 if ($timertrue==1) {
-	$doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/script.js");
+	$doc->addCustomTag ('<script src="'.JURI::root(true).'modules/mod_jlgrouppro/js/script.js" type="text/javascript"></script>');
 	}
 else {}
 if ($groupgoogle==1) {
@@ -38,7 +38,7 @@ $scriptPage	='';
 <?php
 if ($popuptrue==1) { 
 $doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/popup.css");
-$doc->addScript(JURI::root(true)."modules/mod_jlgrouppro/js/jquery.cookie.js");
+$doc->addCustomTag ('<script src="'.JURI::root(true).'modules/mod_jlgrouppro/js/jquery.cookie.js" type="text/javascript"></script>');
 ?>
 <div id="parent_popup">
 <div id="popup">
