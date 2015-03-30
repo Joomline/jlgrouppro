@@ -10,7 +10,7 @@
 // No direct access
 
 $doc = JFactory::getDocument();
-$doc->addStyleSheet(JURI::root(true)."modules/mod_jlgrouppro/css/jlgroupetabs.css");
+$doc->addStyleSheet(JURI::root(true)."/modules/mod_jlgrouppro/css/jlgroupetabs.css");
 if ($typeviewerjq==1) {
 	$doc->addCustomTag ('<script src="http://yandex.st/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>');
 	}
@@ -21,7 +21,7 @@ if ($link==0){
 	$linknone = 'display:none;';
 	}
 if ($timertrue==1) {
-	$doc->addCustomTag ('<script src="'.JURI::root(true).'modules/mod_jlgrouppro/js/script.js" type="text/javascript"></script>');
+	$doc->addCustomTag ('<script src="'.JURI::root(true).'/modules/mod_jlgrouppro/js/script.js" type="text/javascript"></script>');
 	}
 else {}
 if ($groupgoogle==1) {
