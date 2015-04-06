@@ -6,11 +6,10 @@
 * {
 	margin:0;
 	padding:0;
-	color:#222;
 }
 
 .jlgroupprocustom {
-padding-top: 40px;
+	padding-top: 40px;
 }
 
 div[class*=csstabs] {
@@ -27,26 +26,27 @@ div[class*=csstabs] {
 	line-height:30px;
 	padding:0 5px;
 	cursor:pointer;
+	font-size: 12px;
 }
 
 	[class*=tab1-] {
-		width:40px;
+		width:45px;
 		left:0;
 	}
 	[class*=tab2-] {
-		width:40px;
+		width:45px;
 		left:60px;
 	}
 	[class*=tab3-] {
-		width:40px;
+		width:45px;
 		left:120px;
 	}
 	[class*=tab4-] {
-		width:40px;
+		width:45px;
 		left:180px;
 	}
 	[class*=tab5-] {
-		width:40px;
+		width:45px;
 		left:240px;
 	}
 
