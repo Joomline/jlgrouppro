@@ -33,6 +33,7 @@ if ($groupgoogle==0) {
 	}
 else {}
 $scriptPage	='';
+$checked_vk = '';
 ?>
 <?php if (!$allow): ?>
 <?php
