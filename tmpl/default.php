@@ -62,10 +62,10 @@ foreach ($orders as $order) {
 	<style>
 		#jlvkgrouppro$module->id, div#jlvkgrouppro$module->id iframe {height: {$heightvk}px !important;}
 	</style>
-	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-vk"></i> VK</label>
-	<input id="tab$idtab-$module->id" type="radio" name="$module->id" $checked $checked_vk name="radiobutton">
+	<label class="jltab$idtab-$module->id" for="jltab$idtab-$module->id"><i class="jlico-vk"></i> VK</label>
+	<input id="jltab$idtab-$module->id" type="radio" name="$module->id" $checked $checked_vk name="radiobutton">
 		<div  id="vkgroup$module->id">
-		<div class="tab$idtab-$module->id"><i class="jlico-vk"></i> VK</div>
+		<div class="jltab$idtab-$module->id"><i class="jlico-vk"></i> VK</div>
 			<div  id="jlvkgrouppro$module->id"></div>
 			<script type="text/javascript">
 				VK.Widgets.Group("jlvkgrouppro$module->id", {mode: $mode, wide: $wide, width: "$widthvk", height: "$heightvk", color1: '$color1', color2: '$color2', color3: '$color3'}, $group_id);
@@ -76,10 +76,10 @@ HTML;
 					$idtab++;	} else {$scriptPage .='';} break;
 	case 2:	
 	if ($showok) { $scriptPage .= <<<HTML
-	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-ok"></i> ОК</label>
-	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
+	<label class="jltab$idtab-$module->id" for="jltab$idtab-$module->id"><i class="jlico-ok"></i> ОК</label>
+	<input id="jltab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
 		<div id="okgroup$module->id">
-			<div class="tab$idtab-$module->id"><i class="jlico-ok"></i> ОК</div>
+			<div class="jltab$idtab-$module->id"><i class="jlico-ok"></i> ОК</div>
 				<div id="ok_grouppro_widget$module->id"></div>
 				<script>
 					!function(d,id,did,st){
@@ -102,10 +102,10 @@ HTML;
 					$idtab++;	} else {$scriptPage .='';} break;
 	case 3:	
 	if ($showfacebook) { $scriptPage .= <<<HTML
-	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-facebook"></i> FB</label>
-	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">		
+	<label class="jltab$idtab-$module->id" for="jltab$idtab-$module->id"><i class="jlico-facebook"></i> FB</label>
+	<input id="jltab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">		
 		<div id="fbgroup$module->id">
-		<div class="tab$idtab-$module->id"><i class="jlico-facebook"></i> FB</div>
+		<div class="jltab$idtab-$module->id"><i class="jlico-facebook"></i> FB</div>
 			<div id="fb-root"></div>
 				<script>(function(d, s, id) {
 					  var js, fjs = d.getElementsByTagName(s)[0];
@@ -129,10 +129,10 @@ HTML;
 		div[id*=community_] * {min-height:{$heightgp}px !important;}
 		#ggroupcontent$module->id, #div[id*=community_] iframe * {min-height:{$heightgp}px !important;}
 	</style>	 
-	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-google"></i> G+</label>
-	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
+	<label class="jltab$idtab-$module->id" for="jltab$idtab-$module->id"><i class="jlico-google"></i> G+</label>
+	<input id="jltab$idtab-$module->id" type="radio"  name="$module->id" $checked name="radiobutton">
 		<div id="ggroup$module->id">
-			<div class="tab$idtab-$module->id"><i class="jlico-google"></i> G+</div>
+			<div class="jltab$idtab-$module->id"><i class="jlico-google"></i> G+</div>
 			<div id="ggroupcontent$module->id">
 				<script type="text/javascript" src="https://apis.google.com/js/platform.js">
 					{lang: '$googlelang'}
@@ -144,10 +144,10 @@ HTML;
 					$idtab++;	} else {$scriptPage .='';} break;
 case 5:	
 	if ($showtwitter) { $scriptPage .= <<<HTML
-	<label class="tab$idtab-$module->id" for="tab$idtab-$module->id"><i class="jlico-twitter"></i> TW</label>
-	<input id="tab$idtab-$module->id" type="radio"  name="$module->id" name="radiobutton">
+	<label class="jltab$idtab-$module->id" for="jltab$idtab-$module->id"><i class="jlico-twitter"></i> TW</label>
+	<input id="jltab$idtab-$module->id" type="radio"  name="$module->id" name="radiobutton">
 	<div   id="twittergroup$module->id">
-		<div class="tab$idtab-$module->id"><i class="jlico-twitter"></i> TW</div>
+		<div class="jltab$idtab-$module->id"><i class="jlico-twitter"></i> TW</div>
 			<a href="https://twitter.com/$twitterid" class="twitter-follow-button" data-show-count="true" data-size="$twittersize" data-lang="$googlelang">Follow @$twitterid</a>
 			
 			<a class="twitter-timeline" height="$heighttw"  data-chrome="nofooter transparent noscrollbar noheader" href="https://twitter.com/$twitterid" data-widget-id="$twitteridwz">Tweets by @$twitterid</a>

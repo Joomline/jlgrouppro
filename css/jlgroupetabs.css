@@ -29,23 +29,23 @@ div[class*=csstabs] {
 	font-size: 12px;
 }
 
-	[class*=tab1-] {
+	[class*=jltab1-] {
 		width:45px;
 		left:0;
 	}
-	[class*=tab2-] {
+	[class*=jltab2-] {
 		width:45px;
 		left:60px;
 	}
-	[class*=tab3-] {
+	[class*=jltab3-] {
 		width:45px;
 		left:120px;
 	}
-	[class*=tab4-] {
+	[class*=jltab4-] {
 		width:45px;
 		left:180px;
 	}
-	[class*=tab5-] {
+	[class*=jltab5-] {
 		width:45px;
 		left:240px;
 	}
