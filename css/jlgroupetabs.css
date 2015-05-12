@@ -18,7 +18,7 @@ div[class*=csstabs] {
 	position:relative;
 }
 
-[class*=tab1-], [class*=tab2-], [class*=tab3-], [class*=tab4-], [class*=tab5-] {
+[class*=jltab1-], [class*=jltab2-], [class*=jltab3-], [class*=jltab4-], [class*=jltab5-] {
 	height:30px;
 	position:absolute;
 	top:-30px;
