@@ -12,7 +12,7 @@
 $doc = JFactory::getDocument();
 $doc->addStyleSheet(JURI::root(true)."/modules/mod_jlgrouppro/css/jlgroupetabs.css");
 if ($typeviewerjq==1) {
-	$doc->addCustomTag ('<script src="http://yandex.st/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>');
+	$doc->addCustomTag ('<script src="//yandex.st/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>');
 	}
 if ($typeviewernojq==1) {
 	$doc->addCustomTag ('<script type="text/javascript">var jqjlpro = jQuery.noConflict();</script>');
@@ -84,7 +84,7 @@ HTML;
 				<script>
 					!function(d,id,did,st){
 					  var js=d.createElement('script');
-					  js.src="http://connect.ok.ru/connect.js";
+					  js.src="https://connect.ok.ru/connect.js";
 					  js.onload = js.onreadystatechange = function (){
 						if(!this.readyState || this.readyState=="loaded" || this.readyState=="complete"){
 						   if(!this.executed){
@@ -115,7 +115,7 @@ HTML;
 					  fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
 				</script>
-			<div class="fb-like-box" data-href="http://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="$datashowfacesfb" data-stream="$datastreamfb" data-colorscheme="$colorschemefb" data-header="true"></div>
+			<div class="fb-like-box" data-href="https://www.facebook.com/$group_id_fb" data-width="$widthfb" data-height="$heightfb" data-show-faces="$datashowfacesfb" data-stream="$datastreamfb" data-colorscheme="$colorschemefb" data-header="true"></div>
 		</div>
 HTML;
 					$idtab++;	} else {$scriptPage .='';} break;
