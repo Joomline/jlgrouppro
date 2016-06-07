@@ -84,7 +84,7 @@ HTML;
 				<script>
 					!function(d,id,did,st){
 					  var js=d.createElement('script');
-					  js.src="https://connect.ok.ru/connect.js";
+					  js.src="//connect.ok.ru/connect.js";
 					  js.onload = js.onreadystatechange = function (){
 						if(!this.readyState || this.readyState=="loaded" || this.readyState=="complete"){
 						   if(!this.executed){
