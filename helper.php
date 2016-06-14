@@ -2,7 +2,7 @@
  /**
  * @package mod_jlgrouppro
  * @author Kunicin Vadim (vadim@joomline.ru)
- * @version 1.1
+ * @version 1.8
  * @copyright (C) 2013 by JoomLine (http://www.joomline.net)
  * @license GNU/GPL: http://www.gnu.org/copyleft/gpl.html
  *

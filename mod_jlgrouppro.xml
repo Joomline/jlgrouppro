@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="2.5" method="upgrade">
 	<name>MOD_JLGROUPPRO</name>
-	<creationDate>2015-05-15</creationDate>
+	<creationDate>2016-06-14</creationDate>
 	<author>JoomLine</author>
 	<authorEmail>sale@joomline.ru</authorEmail>
 	<authorUrl>http://www.joomline.net</authorUrl>
 	<copyright>Copyright 2013 JoomLine.net All rights reserved!</copyright>
 	<license>license GNU/GPL: http://www.gnu.org/copyleft/gpl.html </license>
-	<version>1.7.1</version>
+	<version>1.8.0</version>
 	<description>MOD_JLGROUPPRO_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_jlgrouppro">mod_jlgrouppro.php</filename>
